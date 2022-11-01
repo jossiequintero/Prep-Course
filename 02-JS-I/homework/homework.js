@@ -147,7 +147,9 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
-  let $mensaje = "";
+  
+  // V1
+  /*let $mensaje = "";
   if (numero > 0) {
     $mensaje = "Es positivo";
   }
@@ -158,6 +160,12 @@ function esPositivo(numero) {
     $mensaje = false;
   }
   return $mensaje;
+  */
+
+  //V2
+  if(numero ===0)return false;
+  return numero > 0 ? "Es positivo": "Es negativo";
+
 }
 
 function agregarSimboloExclamacion(str) {
