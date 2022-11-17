@@ -5,9 +5,15 @@ function obtenerMayor(x, y) {
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
+
+  // V!
+  // if(x === y) return x;
+  // if(x > y) return x;
+  // return y;
+
+  //V2
   if(x > y) return x;
-  if(y > x) return y;
-  return x;
+  return y;
 
 }
 
@@ -36,16 +42,35 @@ function saludo(idioma) {
   // Si "idioma" es "ingles", devuelve "Hello!"
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
-  switch (idioma) {
-    case "aleman":
-      return "Guten Tag!";
-    case "mandarin":
-      return "Ni Hao!";
-    case "ingles":
-      return "Hello!";
-    default:
-      return "Hola!";
-  }
+  let saludos = 
+  [
+      {
+        idioma: 'aleman',
+        saludo: 'Guten Tag!',
+      },
+      {
+        idioma: 'mandarin',
+        saludo: 'Ni Hao!',
+      },
+      {
+        idioma: 'ingles',
+        saludo: 'Hello!',
+      }
+    ]
+
+  let saludo = saludos.find((saludo)=>saludo.idioma === idioma);
+  if(saludo) return saludo.saludo;
+  return "Hola!";
+  // switch (idioma) {
+  //   case "aleman":
+  //     return "Guten Tag!";
+  //   case "mandarin":
+  //     return "Ni Hao!";
+  //   case "ingles":
+  //     return "Hello!";
+  //   default:
+  //     return "Hola!";
+  // }
 }
 
 function colors(color) {
@@ -56,18 +81,20 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
-  switch (color) {
-    case "blue":
-      return `This is ${color}`;
-    case "red":
-      return `This is ${color}`;
-    case "green":
-      return `This is ${color}`;
-    case "orange":
-      return `This is ${color}`;
-    default:
-      return "Color not found";
-  }
+  // switch (color) {
+  //   case "blue":
+  //     return `This is ${color}`;
+  //   case "red":
+  //     return `This is ${color}`;
+  //   case "green":
+  //     return `This is ${color}`;
+  //   case "orange":
+  //     return `This is ${color}`;
+  //   default:
+  //     return "Color not found";
+  // }
+  let colores = ['blue', 'red', 'green', 'orange'];
+  return colores.includes(color) ? `This is ${color}`: "Color not found";
 }
 
 function esDiezOCinco(numero) {
@@ -100,7 +127,10 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
+  
+  // if(numero % 15 == 0) return "fizzbuzz";
   if(numero % 3 === 0 && numero % 5 === 0)return "fizzbuzz";
+
   if (numero % 3 === 0) return "fizz";
   if(numero % 5 === 0) return "buzz";
   return numero;

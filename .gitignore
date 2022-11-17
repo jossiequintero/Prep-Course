@@ -5,4 +5,6 @@ package-lock.json
 # Eleventy
 _dist
 _cache
-/_src/localStyles
+/_src/localStyles.vscode/
+
+.vscode

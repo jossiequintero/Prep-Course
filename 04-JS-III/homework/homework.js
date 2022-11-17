@@ -80,11 +80,12 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-  let suma = 0;
-  numeros.forEach(element => {
-    suma += element;
-  });
-  return suma;
+  // let suma = 0;
+  // numeros.forEach(element => {
+  //   suma += element;
+  // });
+  // return suma;
+  return numeros.reduce((pre,curr)=>pre + curr, 0);
 }
 
 
@@ -92,11 +93,14 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  let suma = 0;
-  resultadosTest.forEach(element => {
-    suma += element;
-  });
-  return suma / resultadosTest.length;
+ 
+  // let suma = 0;
+  // resultadosTest.forEach(element => {
+  //   suma += element;
+  // });
+  // return suma / resultadosTest.length;
+
+  return agregarNumeros(resultadosTest) / resultadosTest.length;
 }
 
 
@@ -112,17 +116,14 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-  if(arguments.length === 1)return arguments[0];
-  if(arguments.length > 0){
-    let producto = 1;
-    Object.entries(arguments).forEach(function(argument){
-      producto *= argument[1];
-    });
-    return producto;
-  }
-  else{
-    return 0;
-  }
+  if(arguments.length === 0) return 0;
+  if(arguments.length === 1) return arguments[0];
+  
+  let producto = 1;
+  Object.entries(arguments).forEach(function(argument){
+    producto *= argument[1];
+  });
+  return producto;
 }
 
 
